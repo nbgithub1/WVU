@@ -1,4 +1,4 @@
-
+#this script will create measurements database and the MeasurementTimeStamp table to store the measurement data from openPDC Custom output manager.
 DROP DATABASE IF EXISTS measurements;
 CREATE DATABASE measurements;
 USE measurements;

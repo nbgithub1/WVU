@@ -1,3 +1,6 @@
+#This script will create the user account records for the client machine's windows user name
+# This is required for the openPDC to access the openpdc configuration database from the client machine.
+
 Use openpdc;
 #name - Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon - AutoLogonSID from client machine
 select @WinUserName := 'X-X-X-XX-XXXXXXXX-XXXXXXX-XXXXX-XXXX';
@@ -115,6 +118,7 @@ uuid()
 ,@ClienMachineUserIP
 );
 
+#insert a record to applicationroleuseraccount
 INSERT INTO `openpdc`.`applicationroleuseraccount`
 (`ApplicationRoleID`,
 `UserAccountID`)
